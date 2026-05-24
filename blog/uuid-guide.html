@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UUID v4 vs v7: Complete Guide to UUID Versions | UUID Generator</title>
+<meta name="description" content="Complete guide to UUID v4 and v7. Learn the differences between random and time-ordered UUIDs, when to use each, and generate them free in your browser.">
+<meta property="og:title" content="UUID v4 vs v7: Complete Guide to UUID Versions">
+<meta property="og:description" content="Learn the differences between UUID v4 (random) and v7 (time-ordered) and which to use for your project.">
+<meta property="og:image" content="https://xueboyang1985.github.io/uuid-generator/og-image.png">
+<link rel="canonical" href="https://xueboyang1985.github.io/uuid-generator/blog/uuid-guide.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "UUID v4 vs v7: Complete Guide to UUID Versions",
+  "description": "Learn the differences between UUID v4 and v7, when to use each, and generate them free.",
+  "url": "https://xueboyang1985.github.io/uuid-generator/blog/uuid-guide.html",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://xueboyang1985.github.io/uuid-generator/" }
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;color:#1a1a1a;line-height:1.8;padding:20px;}
+.container{max-width:700px;margin:0 auto;}
+h1{font-size:28px;margin:30px 0 10px;}
+h2{font-size:20px;margin:30px 0 10px;color:#4338ca;}
+p{margin:12px 0;color:#475569;}
+ul{margin:12px 0 12px 24px;color:#475569;}
+.cta{background:#eef2ff;border-radius:12px;padding:24px;text-align:center;margin:30px 0;}
+.cta a{display:inline-block;padding:12px 28px;background:#6366f1;color:white;border-radius:8px;text-decoration:none;font-weight:600;font-size:16px;}
+.cta a:hover{background:#4f46e5;}
+.faq{border-top:1px solid #e2e8f0;padding:16px 0;}
+.faq h3{font-size:16px;cursor:pointer;color:#1a1a1a;}
+.faq p{display:none;margin-top:8px;}
+.meta{color:#94a3b8;font-size:13px;margin-bottom:20px;}
+table{width:100%;border-collapse:collapse;margin:16px 0;}
+td,th{border:1px solid #e2e8f0;padding:10px;text-align:left;font-size:14px;}
+th{background:#eef2ff;font-weight:600;}
+code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:14px;}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>UUID v4 vs v7: Which One Should You Use?</h1>
+<p class="meta">Published May 2026</p>
+
+<p>Universally Unique Identifiers (UUIDs) are 128-bit identifiers used across software development. With the introduction of UUID v7 (RFC 9562) in 2024, developers now have a compelling alternative to the widely-used UUID v4. This guide explains the differences and helps you choose.</p>
+
+<div class="cta">
+<p><strong>Need to generate UUIDs right now?</strong></p>
+<a href="../">Open UUID Generator →</a>
+</div>
+
+<h2>UUID v4 (Random)</h2>
+<p>UUID v4 generates identifiers from random numbers. 122 bits are randomly generated (6 bits reserved for version/variant markers).</p>
+<p><strong>Example:</strong> <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code></p>
+<ul>
+<li>✅ Simple, universally supported</li>
+<li>✅ No coordination needed between systems</li>
+<li>❌ Random ordering → poor database index performance (B-tree splits)</li>
+<li>❌ No inherent sortability or timestamp information</li>
+</ul>
+
+<h2>UUID v7 (Time-Ordered)</h2>
+<p>UUID v7 embeds a Unix timestamp (milliseconds) in the first 48 bits, with random bits for uniqueness. This makes them sortable by creation time.</p>
+<p><strong>Example:</strong> <code>018f0a8b-1234-7c8d-9abc-def012345678</code></p>
+<ul>
+<li>✅ Sortable by creation time — ideal for database primary keys</li>
+<li>✅ Better database index performance (sequential insertion)</li>
+<li>✅ Encodes timestamp for debugging (know when each ID was created)</li>
+<li>✅ Still unique without coordination</li>
+</ul>
+
+<h2>Comparison Table</h2>
+<table>
+<tr><th>Feature</th><th>UUID v4</th><th>UUID v7</th></tr>
+<tr><td>Generation</td><td>Random</td><td>Time-based + random</td></tr>
+<tr><td>Sortable</td><td>No</td><td>Yes (by creation time)</td></tr>
+<tr><td>DB Index perf</td><td>Poor (random inserts)</td><td>Good (sequential inserts)</td></tr>
+<tr><td>Timestamp</td><td>None</td><td>Millisecond precision</td></tr>
+<tr><td>Standard</td><td>RFC 4122 (2005)</td><td>RFC 9562 (2024)</td></tr>
+<tr><td>Collision risk</td><td>Extremely low</td><td>Extremely low</td></tr>
+</table>
+
+<h2>Which Should You Use?</h2>
+<ul>
+<li><strong>Use UUID v4</strong> when: you need maximum compatibility, don't care about sort order, or are using a database that handles random UUIDs well (e.g., UUID-optimized Postgres).</li>
+<li><strong>Use UUID v7</strong> when: you want sortable primary keys, better database performance, or the ability to extract creation timestamps from IDs.</li>
+</ul>
+
+<div class="cta">
+<p><strong>Generate UUIDs free in your browser — no upload, no tracking</strong></p>
+<a href="../">UUID Generator →</a>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<h3>Are UUIDs guaranteed to be unique?</h3>
+<p>Not mathematically guaranteed, but practically yes. The chance of a UUID v4 collision is about 1 in 5.3×10³⁶ — essentially zero for real-world applications.</p>
+</div>
+<div class="faq">
+<h3>Is UUID v7 supported everywhere?</h3>
+<p>UUID v7 is new (RFC 9562, May 2024). Most languages now support it: Python 3.14+, Java 21+, and Node.js via libraries. For older systems, v4 remains the safe choice.</p>
+</div>
+<div class="faq">
+<h3>Can I generate UUIDs offline?</h3>
+<p>Yes. Our UUID Generator runs entirely in your browser using crypto.getRandomValues(). No server connection needed — works fully offline.</p>
+</div>
+
+<script>
+document.querySelectorAll('.faq h3').forEach(h3=>{h3.addEventListener('click',()=>{const p=h3.nextElementSibling;p.style.display=p.style.display==='block'?'none':'block'})});
+</script>
+</div>
+</body>
+</html>
