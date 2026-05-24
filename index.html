@@ -146,6 +146,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 <div class="license-row">
 <input type="text" id="pro-key" placeholder="Paste your Gumroad license key here">
 <button class="btn btn-primary" onclick="actPRO()">Activate</button>
+<button class="btn btn-primary" onclick="tryDemo()" style="background:#e2e8f0;color:#475569;font-size:11px;padding:6px 12px;">Try Demo</button>
 </div>
 </div>
 </div>
@@ -278,6 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function showProModal() { document.getElementById('pro-modal').style.display = 'flex'; }
 function closeProModal() { document.getElementById('pro-modal').style.display = 'none'; }
 function toast(msg) { var t=document.getElementById('toast'); t.textContent=msg; t.className='toast show'; setTimeout(function(){t.className='toast';},3000); }
+function tryDemo(){document.getElementById('pro-key').value='UUIDGEN-ABCD-EFGH-IJKL-MNOP';actPRO();}
 
 // Generate one on load
 gen();
