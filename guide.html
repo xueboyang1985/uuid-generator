@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UUID Generator Guide | Free Online Tool</title>
+<meta name="description" content="Complete guide to UUID generation. Learn about UUID v4 (random) and v7 (time-ordered), when to use each, and how to bulk generate.">
+<meta name="keywords" content="UUID generator, UUID v4, UUID v7, generate UUID, bulk UUID, random UUID, time-ordered UUID">
+<link rel="canonical" href="https://xueboyang1985.github.io/uuid-generator/guide.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;color:#1a1a1a;line-height:1.8;padding:20px;}
+.container{max-width:700px;margin:0 auto;}
+h1{font-size:28px;margin:30px 0 10px;}
+h2{font-size:20px;margin:30px 0 10px;color:#4338ca;}
+p{margin:12px 0;color:#475569;}
+ul,ol{margin:12px 0 12px 24px;color:#475569;}
+.cta{background:#eef2ff;border-radius:12px;padding:24px;text-align:center;margin:30px 0;}
+.cta a{display:inline-block;padding:12px 28px;background:#6366f1;color:white;border-radius:8px;text-decoration:none;font-weight:600;font-size:16px;}
+.cta a:hover{background:#4f46e5;}
+.meta{color:#94a3b8;font-size:13px;margin-bottom:20px;}
+code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:14px;}
+.faq{border-top:1px solid #e2e8f0;padding:16px 0;}
+.faq h3{font-size:16px;cursor:pointer;color:#1a1a1a;}
+.faq p{display:none;margin-top:8px;}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>UUID Generator (v4 & v7): User Guide</h1>
+<p class="meta">Updated May 2026</p>
+
+<div class="cta">
+<p><strong>Open the tool to get started</strong></p>
+<a href="../">🆔 Go to UUID Generator →</a>
+</div>
+
+<h2>Getting Started</h2>
+<ol>
+<li>Select UUID version: v4 (random) or v7 (time-ordered)</li>
+<li>Choose quantity: single or bulk (up to 10 free, up to 100 PRO)</li>
+<li>Click Generate to create UUIDs</li>
+<li>Copy individual UUIDs or download all as text</li>
+<li>UUIDs are formatted as standard 36-character strings</li>
+</ol>
+
+<h2>PRO Features</h2>
+<p>The free version has basic limits. Upgrade to PRO to unlock:</p>
+<ul>
+<li><strong>Unlimited usage</strong> — no more restrictions</li>
+<li><strong>File upload</strong> — process files directly</li>
+<li><strong>Priority support</strong> — get help when you need it</li>
+</ul>
+<p>PRO is a one-time purchase via the <a href="https://xueboyang1985.github.io/free-browser-tools/bundle.html">PRO Bundle ($19.99)</a> — one key unlocks all 10 tools.</p>
+
+<div class="cta">
+<p><strong>Get lifetime PRO access to all 10 tools</strong></p>
+<a href="https://xueboyang1985.github.io/free-browser-tools/bundle.html">Get the PRO Bundle →</a>
+</div>
+
+<h2>FAQ</h2>
+<div class="faq">
+<h3>What is the difference between UUID v4 and v7?</h3>
+<p>UUID v4 is entirely random. UUID v7 embeds a Unix timestamp (millisecond precision) making them sortable by creation time — better for database primary keys.</p>
+</div>
+<div class="faq">
+<h3>Are UUIDs guaranteed to be unique?</h3>
+<p>Not mathematically guaranteed, but practically yes. The chance of a UUID v4 collision is about 1 in 5.3×10³⁶.</p>
+</div>
+<div class="faq">
+<h3>Can I generate UUIDs offline?</h3>
+<p>Yes. Our tool uses crypto.getRandomValues() from the Web Crypto API. No server connection needed.</p>
+</div>
+
+<script>
+document.querySelectorAll('.faq h3').forEach(h3=>{h3.addEventListener('click',()=>{const p=h3.nextElementSibling;p.style.display=p.style.display==='block'?'none':'block'})});
+</script>
+
+<p style="text-align:center;margin:40px 0;"><a href="../" style="color:#6366f1;">🆔 Back to UUID Generator →</a></p>
+</div>
+</body>
+</html>
